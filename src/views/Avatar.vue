@@ -2,11 +2,11 @@
   <div>
       <b-container class="bv-example-row">
         <b-row>
-          <b-col>
-            <div class="mb-2 image-effect">
-              <!-- <b-avatar src="https://placekitten.com/300/300"></b-avatar>
-              <b-avatar src="https://placekitten.com/300/300" size="6rem"></b-avatar> -->
-          </div>
+          <b-col class="image-effect">
+<!--            <div class="mb-2 image-effect">-->
+<!--              &lt;!&ndash; <b-avatar src="https://placekitten.com/300/300"></b-avatar>-->
+<!--              <b-avatar src="https://placekitten.com/300/300" size="6rem"></b-avatar> &ndash;&gt;-->
+<!--          </div>-->
           </b-col>
           <b-col>
                  <b-form @submit="onSubmit" @reset="onReset" v-if="show">
@@ -62,17 +62,17 @@
     </b-card>
 
           </b-col>
-          
 
-         
-         
+
+
+
         </b-row>
     </b-container>
 
 
 
 
- 
+
   </div>
 </template>
 
@@ -111,9 +111,9 @@
     }
   }
 </script>
-<styled scoped>
+<style scoped>
     .image-effect{
       background-color: chartreuse;
       border:1px solid black;
     }
-</styled>
+</style>
