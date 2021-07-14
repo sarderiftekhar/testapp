@@ -12,7 +12,7 @@
                     <b-container>
                         <b-row class="justify-content-md-center mt-4">
                             <b-col col md="12">
-                                <b-card header="Login Here"
+                                <b-card header="Register Here"
                                     header-bg-variant="primary"
                                     header-text-variant="white"
                                 >
@@ -28,13 +28,9 @@
                                         <b-form-input v-model="form.password" type="password" required></b-form-input>
                                         </b-form-group>
                                         <b-form-group>
-                                            <b-button type="submit" variant="outline-primary" :disabled="acceptableSubmition">Submit </b-button>
+                                            <b-button type="submit" variant="outline-primary" :disabled="acceptableSubmition">Register </b-button>
                                         </b-form-group>
                                     </b-form>
-                                    <b-col col md="12" class="justify-content-center text-center d-block">
-                                        <small>Don't have an account?</small>
-                                        <router-link to="/register">Signup</router-link>
-                                    </b-col>
                                 </b-card-text>
                                 </b-card>
                             </b-col>

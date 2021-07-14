@@ -1,6 +1,7 @@
 <template>
   <div>
       <b-container class="bv-example-row mt-5">
+          <h1>Register here</h1>
         <b-row>
           <b-col>
             <div class="mb-2">
@@ -12,7 +13,7 @@
                     <b-container>
                         <b-row class="justify-content-md-center mt-4">
                             <b-col col md="12">
-                                <b-card header="Login Here"
+                                <b-card header="Register Here"
                                     header-bg-variant="primary"
                                     header-text-variant="white"
                                 >
@@ -33,7 +34,7 @@
                                     </b-form>
                                     <b-col col md="12" class="justify-content-center text-center d-block">
                                         <small>Don't have an account?</small>
-                                        <router-link to="/register">Signup</router-link>
+                                        <a href="">Signup</a>
                                     </b-col>
                                 </b-card-text>
                                 </b-card>
