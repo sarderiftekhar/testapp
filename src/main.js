@@ -8,13 +8,12 @@ import '../node_modules/bootstrap-vue/dist/bootstrap-vue.min.css'
 import firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBO6mLxYysaxslbSDIk8_xwQgNFfqUYVk0",
-  authDomain: "vuefirebase-316f6.firebaseapp.com",
-  databaseURL: "https://vuefirebase-316f6.firebaseio.com",
-  projectId: "vuefirebase-316f6",
-  storageBucket: "vuefirebase-316f6.appspot.com",
-  messagingSenderId: "115774097554",
-  appId: "1:115774097554:web:53e443b1c284a8bce4fe4b"
+    apiKey: "AIzaSyAlVdCoLO0tMVMITRf9thI_swO8hS2b0s8",
+    authDomain: "testapp-870c6.firebaseapp.com",
+    projectId: "testapp-870c6",
+    storageBucket: "testapp-870c6.appspot.com",
+    messagingSenderId: "826280738800",
+    appId: "1:826280738800:web:6972f8139b99f130ef6735"
 };
 
 // Initialize Firebase

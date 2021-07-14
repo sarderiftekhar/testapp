@@ -17,10 +17,10 @@
                                     header-text-variant="white"
                                 >
                                 <b-card-text class="text-left">
-                                    <b-form @submit="onSubmit">
-                                        <b-form-group description="Enter your username"
-                                            label="Username">
-                                        <b-form-input v-model="form.username" required></b-form-input>
+                                    <b-form @submit="login">
+                                        <b-form-group description="Enter your email"
+                                            label="Email">
+                                        <b-form-input v-model="form.email" required></b-form-input>
                                         
                                         </b-form-group>
                                             <b-form-group description="Enter your password"
@@ -50,16 +50,30 @@
 </template>
 
 <script>
+import firebase from "firebase";
+
   export default {
     data() {
       return {
         form: {
-          username: '',
+          email: '',
           password: '',
         },
       }
     },
     methods: {
+      login() {
+          firebase
+            .auth()
+            .signInWithEmailAndPassword(this.form.email, this.form.password)
+            .then(() => {
+              alert('Successfully logged in');
+              this.$router.push('/dashboard');
+            })
+            .catch(error => {
+              alert(error.message);
+            });
+        },
       onSubmit(event) {
         event.preventDefault()
         alert(JSON.stringify(this.form))
@@ -67,13 +81,13 @@
       onReset(event) {
         event.preventDefault()
         // Reset our form values
-        this.form.username = '',
+        this.form.email = '',
         this.form.password = ''
       }
     },
     computed:{
         acceptableSubmition(){
-            return this.form.username.length > 0 && this.form.password.length > 0 ? false:true;
+            return this.form.email.length > 0 && this.form.password.length > 0 ? false:true;
         }
     }
   }
