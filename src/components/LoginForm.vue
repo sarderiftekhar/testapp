@@ -17,11 +17,11 @@
                                     header-text-variant="white"
                                 >
                                 <b-card-text class="text-left">
-                                    <b-form @submit="login">
+                                    <b-form @submit.prevent="login">
                                         <b-form-group description="Enter your email"
                                             label="Email">
                                         <b-form-input v-model="form.email" required></b-form-input>
-                                        
+
                                         </b-form-group>
                                             <b-form-group description="Enter your password"
                                             label="Password">
@@ -41,7 +41,7 @@
                         </b-row>
                         <b-row class="mt-5">
                         </b-row>
-                    </b-container>    
+                    </b-container>
                 </div>
           </b-col>
         </b-row>
@@ -59,35 +59,37 @@ import firebase from "firebase";
           email: '',
           password: '',
         },
+        response:''
       }
     },
     methods: {
       login() {
-          firebase
-            .auth()
-            .signInWithEmailAndPassword(this.form.email, this.form.password)
-            .then(() => {
+        console.log(this.form.email, this.form.password)
+          firebase.auth().signInWithEmailAndPassword(this.form.email, this.form.password)
+            .then((res) => {
+              this.response=res
+              console.log('res',res)
               alert('Successfully logged in');
-              this.$router.push('/dashboard');
+
             })
             .catch(error => {
               alert(error.message);
             });
         },
-      onSubmit(event) {
-        event.preventDefault()
-        alert(JSON.stringify(this.form))
-      },
+      // onSubmit(event) {
+      //   event.preventDefault()
+      //   alert(JSON.stringify(this.form))
+      // },
       onReset(event) {
         event.preventDefault()
         // Reset our form values
-        this.form.email = '',
+        this.form.email = ''
         this.form.password = ''
       }
     },
     computed:{
         acceptableSubmition(){
-            return this.form.email.length > 0 && this.form.password.length > 0 ? false:true;
+            return !(this.form.email.length > 0 && this.form.password.length > 0);
         }
     }
   }
